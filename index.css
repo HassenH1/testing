@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 10px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  max-width: 700px;
+  margin: 10rem auto;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+}
+
+.label {
+  width: auto;
+  padding: 10px 48px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  border: 1px solid black;
+  letter-spacing: 2px;
+}
+
+.input:checked + .label {
+  background: black;
+  color: white;
+}
+
+.hr {
+  width: 10%;
+  margin: 2rem auto;
+  font-weight: bold;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: lighter;
+}
+
+.num {
+  font-size: 45px;
+  margin: 0;
+  font-weight: lighter;
+}
+
+.name {
+  font-size: 20px;
+  margin: 0;
+  color: rgb(95, 95, 95);
+}
+
+@media (min-width: 765px) {
+  .label {
+    width: auto;
+  }
+}
+
+.panel {
+  display: none;
+  padding: 40px 30px 30px;
+  background: #fff;
+}
+
+@media (min-width: 765px) {
+  .panel {
+    order: 99;
+  }
+}
+
+.input:checked + .label + .panel {
+  display: block;
+}
+
+@media (max-width: 765px) {
+  .label {
+    width: 40%;
+    padding: 10px 48px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+
+  .input:checked + .label {
+    background: white;
+    color: black;
+  }
+
+  .accordion {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    border-top: 1px solid black;
+  }
+
+  .accordion:after {
+    content: '\002B';
+    color: black;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: relative;
+    bottom: 0.5rem;
+    font-size: 20px;
+    font-weight: initial;
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    overflow: hidden;
+    max-height: 380px;
+    /* -webkit-transition-property: height;
+    -webkit-transition-duration: 2s;
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-delay: 5s; */
+  }
+} 
